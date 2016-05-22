@@ -5,3 +5,14 @@ body{
     padding-top: 63px;
     padding-bottom: 60px;
 }
+p.navbar-text.pull-right{
+    margin-right: 15px;
+}
+
+p.navbar-text.pull-left{
+    margin-left: 15px;
+}
+
+a.pull-right.play-button{
+    margin-left: 5px;
+}
