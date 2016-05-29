@@ -1,0 +1,54 @@
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                Websites
+            </a>
+
+            <p class="navbar-text pull-right">
+                <a href="#/user/{{model.userId}}/website/new" class="navbar-link">
+          <span class="glyphicon glyphicon-plus">
+          </span>
+                </a>
+            </p>
+
+        </div>
+
+
+    </div>
+</nav>
+
+<div class="container">
+    <ul class="list-group">
+
+        <li ng-repeat="website in model.websites" class="list-group-item">
+            <a href="/assignment/page/page-list.html">
+                {{website.name}}
+            </a>
+            <a href="/assignment/website/website-edit.html" class="pull-right play-button">
+                <span class="glyphicon glyphicon-play"></span>
+            </a>
+            <a href="/assignment/website/website-edit.html" class="pull-right">
+                <span class="glyphicon glyphicon-cog"></span>
+            </a>
+
+        </li>
+
+    </ul>
+
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <div class="row navbar-text navbar-right">
+            <div class="text-center">
+                <a href="#/profile">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</nav>
