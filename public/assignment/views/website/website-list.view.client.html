@@ -25,13 +25,13 @@
     <ul class="list-group">
 
         <li ng-repeat="website in model.websites" class="list-group-item">
-            <a href="/assignment/page/page-list.html">
+            <a href="#/user/{{website.developerId}}/website/{{website._id}}/page">
                 {{website.name}}
             </a>
-            <a href="/assignment/website/website-edit.html" class="pull-right play-button">
+            <a href="#/user/{{website.developerId}}/website/{{website._id}}" class="pull-right play-button">
                 <span class="glyphicon glyphicon-play"></span>
             </a>
-            <a href="/assignment/website/website-edit.html" class="pull-right">
+            <a href="#/user/{{website.developerId}}/website/{{website._id}}" class="pull-right">
                 <span class="glyphicon glyphicon-cog"></span>
             </a>
 
@@ -42,12 +42,12 @@
 </div>
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
-        <div class="row navbar-text navbar-right">
-            <div class="text-center">
-                <a href="#/profile">
-                    <span class="glyphicon glyphicon-user"></span>
-                </a>
-            </div>
+        <div class="navbar-text pull-right">
+
+            <a href="#/user/{{model.userId}}">
+                <span class="glyphicon glyphicon-user"></span>
+            </a>
+
 
         </div>
     </div>

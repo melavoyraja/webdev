@@ -11,20 +11,35 @@
 
         var id = $routeParams.id;
         function  init() {
-            vm.user = UserService.findUserById(id);
+            var promise = UserService.findUserById(id);
+            promise.then(function (response) {
+                vm.user = response.data;
+            });
+
         }
         init();
 
-        vm.updateUser = function (newUser) {
-           
-            var update = UserService.updateUser(id, newUser);
+        vm.deleteUser = function () {
+            UserService.deleteUser(id).then(function (response) {
+                $location.url("/login");
+            })
+        }
 
-            if(update){
-                vm.success = "Profile Saved Successfully!";
-            }else{
-                vm.error = "Failed to Update Profile!"
-            }
-            $location.url("/user/"+user._id);
+        vm.updateUser = function (newUser) {
+            
+            UserService.updateUser(id,newUser)
+                .then(function (response) {
+                    var update = response.data;
+                    if(update){
+                        vm.success = "Profile Saved Successfully!";
+                    }else{
+                        vm.error = "Failed to Update Profile!"
+                    }
+                    // $location.url("/user/"+user._id);
+
+                });
+
+
         }
     }
 })();
